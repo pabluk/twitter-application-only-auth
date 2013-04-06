@@ -3,7 +3,10 @@ import urllib2
 import json
 
 
-REQUEST_TOKEN_URL = 'https://api.twitter.com/oauth2/token'
+API_ENDPOINT = 'https://api.twitter.com'
+API_VERSION = '1.1'
+REQUEST_TOKEN_URL =  '%s/oauth2/token' % API_ENDPOINT
+REQUEST_RATE_LIMIT = '%s/%s/application/rate_limit_status.json' % (API_ENDPOINT, API_VERSION)
 
 
 class Client(object):
@@ -23,6 +26,11 @@ class Client(object):
         request.add_header('Authorization', 'Bearer %s' % self.access_token)
         response = urllib2.urlopen(request)
         return response.read()
+
+    def rate_limit_status(self):
+        """Returns a dict of rate limits by resource."""
+        json_response = self.request(REQUEST_RATE_LIMIT)
+        return json.loads(json_response)
 
     def _get_access_token(self):
         """Obtain a bearer token."""
