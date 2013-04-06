@@ -18,7 +18,7 @@ CONSUMER_SECRET = 'L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg'
 client = Client(CONSUMER_KEY, CONSUMER_SECRET)
 
 # Pretty print of tweet payload
-response = client.request(https://api.twitter.com/1.1/statuses/show.json?id=316683059296624640)
+response = client.request('https://api.twitter.com/1.1/statuses/show.json?id=316683059296624640')
 data = json.loads(response)
 print json.dumps(data, sort_keys=True, indent=4, separators=(',', ':'))
 
