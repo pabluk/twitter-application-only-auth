@@ -9,6 +9,10 @@ REQUEST_TOKEN_URL =  '%s/oauth2/token' % API_ENDPOINT
 REQUEST_RATE_LIMIT = '%s/%s/application/rate_limit_status.json' % (API_ENDPOINT, API_VERSION)
 
 
+class ClientException(Exception):
+    pass
+
+
 class Client(object):
     """This class implements the Twitter's Application-only authentication."""
 
@@ -24,7 +28,11 @@ class Client(object):
 
         request = urllib2.Request(url)
         request.add_header('Authorization', 'Bearer %s' % self.access_token)
-        response = urllib2.urlopen(request)
+        try:
+            response = urllib2.urlopen(request)
+        except urllib2.HTTPError:
+            raise ClientException
+
         return response.read()
 
     def rate_limit_status(self):
