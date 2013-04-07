@@ -26,3 +26,9 @@ print json.dumps(data, sort_keys=True, indent=4, separators=(',', ':'))
 status = client.rate_limit_status()
 print status['resources']['search']
 ```
+
+Real-World use cases
+--------------------
+
+* [Tweet Dump](http://tweetdump.info/): dump and inspect your tweet data!
+
