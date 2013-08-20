@@ -4,6 +4,8 @@ twitter-application-only-auth
 A simple implementation of the Twitter Application-only authentication
 https://dev.twitter.com/docs/auth/application-only-auth
 
+Tested with Python2.7 and Python3.3
+
 Usage
 -----
 
@@ -19,7 +21,7 @@ client = Client(CONSUMER_KEY, CONSUMER_SECRET)
 
 # Pretty print of tweet payload
 response = client.request('https://api.twitter.com/1.1/statuses/show.json?id=316683059296624640')
-data = json.loads(response)
+data = json.loads(response.decode('utf-8'))
 print json.dumps(data, sort_keys=True, indent=4, separators=(',', ':'))
 
 # Show rate limit status for this application
