@@ -1,3 +1,3 @@
 __all__ = ["client"]
 
-from client import Client, ClientException
+from .client import Client, ClientException
