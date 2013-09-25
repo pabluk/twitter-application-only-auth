@@ -3,11 +3,15 @@ import json
 import unittest
 
 try:
+    # For Python 3.0 and later
     from unittest.mock import MagicMock, patch
+    from urllib.error import HTTPError
 except ImportError:
+    # Fall back to Python 2.X
     from mock import MagicMock, patch
+    from urllib2 import HTTPError
 
-from application_only_auth import Client
+from application_only_auth import Client, ClientException
 
 
 def fake_urlopen(request):
@@ -19,7 +23,11 @@ def fake_urlopen(request):
     resource_path = ['tests', 'resources']
     resource_path.extend(url.split('/')[-2:])
     resource_file = os.path.join(*resource_path)
-    return open(resource_file, mode='rb')
+    try:
+        return open(resource_file, mode='rb')
+    except IOError:
+        raise HTTPError(request.get_full_url, 404,
+                        "HTTP Error 404: Not Found", {}, None)
 
 
 class ClientTestCase(unittest.TestCase):
@@ -43,6 +51,13 @@ class ClientTestCase(unittest.TestCase):
 
     def test_show_status(self):
         """Test status show response."""
-        response = self.client.request('https://api.twitter.com/1.1/statuses/show.json?id=316683059296624640')
+        resource_url = 'https://api.twitter.com/1.1' \
+                       '/statuses/show.json?id=316683059296624640'
+        response = self.client.request(resource_url)
         tweet = json.loads(response.decode('utf-8'))
         self.assertEqual(tweet['id_str'], "316683059296624640")
+
+    def test_invalid_resource(self):
+        """Test status show response."""
+        resource_url = 'https://api.twitter.com/1.1/resource/invalid.json'
+        self.assertRaises(ClientException, self.client.request, resource_url)
