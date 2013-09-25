@@ -4,7 +4,9 @@ twitter-application-only-auth
 A simple implementation of the Twitter Application-only authentication
 https://dev.twitter.com/docs/auth/application-only-auth
 
-Tested with Python2.7 and Python3.3
+Tested with Python 2.6, 2.7, 3.2 and 3.3
+[![Build Status](https://travis-ci.org/pabluk/twitter-application-only-auth.png)](https://travis-ci.org/pabluk/twitter-application-only-auth)
+
 
 Usage
 -----
