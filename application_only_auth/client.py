@@ -1,4 +1,3 @@
-import sys
 import base64
 import json
 
@@ -14,8 +13,9 @@ except ImportError:
 
 API_ENDPOINT = 'https://api.twitter.com'
 API_VERSION = '1.1'
-REQUEST_TOKEN_URL =  '%s/oauth2/token' % API_ENDPOINT
-REQUEST_RATE_LIMIT = '%s/%s/application/rate_limit_status.json' % (API_ENDPOINT, API_VERSION)
+REQUEST_TOKEN_URL = '%s/oauth2/token' % API_ENDPOINT
+REQUEST_RATE_LIMIT = '%s/%s/application/rate_limit_status.json' % \
+                     (API_ENDPOINT, API_VERSION)
 
 
 class ClientException(Exception):
@@ -54,8 +54,10 @@ class Client(object):
         bearer_token = '%s:%s' % (self.consumer_key, self.consumer_secret)
         encoded_bearer_token = base64.b64encode(bearer_token.encode('ascii'))
         request = Request(REQUEST_TOKEN_URL)
-        request.add_header('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8')
-        request.add_header('Authorization', 'Basic %s' % encoded_bearer_token.decode('utf-8'))
+        request.add_header('Content-Type',
+                           'application/x-www-form-urlencoded;charset=UTF-8')
+        request.add_header('Authorization',
+                           'Basic %s' % encoded_bearer_token.decode('utf-8'))
         request.add_data('grant_type=client_credentials'.encode('ascii'))
 
         response = urlopen(request)
