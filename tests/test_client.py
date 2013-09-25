@@ -1,5 +1,4 @@
 import os.path
-import json
 import unittest
 
 try:
@@ -63,8 +62,7 @@ class ClientTestCase(unittest.TestCase):
         """Test status show response."""
         resource_url = 'https://api.twitter.com/1.1' \
                        '/statuses/show.json?id=316683059296624640'
-        response = self.client.request(resource_url)
-        tweet = json.loads(response.decode('utf-8'))
+        tweet = self.client.request(resource_url)
         self.assertEqual(tweet['id_str'], "316683059296624640")
 
     def test_invalid_resource(self):
