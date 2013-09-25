@@ -44,10 +44,14 @@ class Client(object):
 
         return response.read()
 
-    def rate_limit_status(self):
+    def rate_limit_status(self, resource=''):
         """Returns a dict of rate limits by resource."""
         json_response = self.request(REQUEST_RATE_LIMIT)
-        return json.loads(json_response.decode('utf-8'))
+        response = json.loads(json_response.decode('utf-8'))
+        if resource:
+            resource_family = resource.split('/')[1]
+            return response['resources'][resource_family][resource]
+        return response
 
     def _get_access_token(self):
         """Obtain a bearer token."""

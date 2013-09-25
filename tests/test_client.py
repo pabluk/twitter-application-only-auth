@@ -53,6 +53,12 @@ class ClientTestCase(unittest.TestCase):
         expected_status = {'remaining': 450, 'limit': 450, 'reset': 1380131036}
         self.assertEqual(resource_status, expected_status)
 
+    def test_rate_limit_with_resource(self):
+        """Test rate limit response using a resource as parameter."""
+        response = self.client.rate_limit_status('/search/tweets')
+        expected = {'remaining': 450, 'limit': 450, 'reset': 1380131036}
+        self.assertEqual(response, expected)
+
     def test_show_status(self):
         """Test status show response."""
         resource_url = 'https://api.twitter.com/1.1' \
