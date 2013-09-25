@@ -42,12 +42,13 @@ class Client(object):
         except HTTPError:
             raise ClientException
 
-        return response.read()
+        raw_data = response.read().decode('utf-8')
+        data = json.loads(raw_data)
+        return data
 
     def rate_limit_status(self, resource=''):
         """Returns a dict of rate limits by resource."""
-        json_response = self.request(REQUEST_RATE_LIMIT)
-        response = json.loads(json_response.decode('utf-8'))
+        response = self.request(REQUEST_RATE_LIMIT)
         if resource:
             resource_family = resource.split('/')[1]
             return response['resources'][resource_family][resource]
