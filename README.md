@@ -3,6 +3,8 @@ twitter-application-only-auth
 
 A simple implementation of the Twitter Application-only authentication
 https://dev.twitter.com/docs/auth/application-only-auth
+that offers applications the ability to issue authenticated requests on behalf
+of the application itself (as opposed to on behalf of a specific user).
 
 Tested with Python 2.6, 2.7, 3.2 and 3.3
 
