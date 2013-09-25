@@ -4,4 +4,9 @@ python:
   - "2.7"
   - "3.2"
   - "3.3"
-script: nosetests
+install:
+  - pip install coveralls --use-mirrors
+script:
+  - nosetests --with-coverage --cover-package=application_only_auth
+after_success:
+  - coveralls
