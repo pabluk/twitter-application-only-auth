@@ -3,12 +3,16 @@ import json
 import unittest
 
 try:
-    # For Python 3.0 and later
+    # For Python 3.3 and later
     from unittest.mock import MagicMock, patch
+except ImportError:
+    from mock import MagicMock, patch
+
+try:
+    # For Python 3.0 and later
     from urllib.error import HTTPError
 except ImportError:
     # Fall back to Python 2.X
-    from mock import MagicMock, patch
     from urllib2 import HTTPError
 
 from application_only_auth import Client, ClientException
