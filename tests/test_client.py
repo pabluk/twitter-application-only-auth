@@ -9,9 +9,11 @@ except ImportError:
 
 try:
     # For Python 3.0 and later
+    from urllib.parse import urlparse
     from urllib.error import HTTPError
 except ImportError:
     # Fall back to Python 2.X
+    from urlparse import urlparse
     from urllib2 import HTTPError
 
 from application_only_auth import Client, ClientException
@@ -22,10 +24,10 @@ def fake_urlopen(request):
     A stub urlopen() implementation that load json responses from
     the filesystem.
     """
-    url = request.get_full_url().split('?')[0]  # remove query parameters
-    resource_path = ['tests', 'resources']
-    resource_path.extend(url.split('/')[-2:])
-    resource_file = os.path.join(*resource_path)
+    # Map path from url to a file
+    parsed_url = urlparse(request.get_full_url())
+    resource_file = os.path.normpath('tests/resources%s' % parsed_url.path)
+
     try:
         return open(resource_file, mode='rb')
     except IOError:
