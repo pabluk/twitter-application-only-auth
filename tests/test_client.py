@@ -3,9 +3,9 @@ import unittest
 
 try:
     # For Python 3.3 and later
-    from unittest.mock import MagicMock, patch
+    from unittest.mock import patch
 except ImportError:
-    from mock import MagicMock, patch
+    from mock import patch
 
 try:
     # For Python 3.0 and later
@@ -40,7 +40,7 @@ class ClientTestCase(unittest.TestCase):
 
     def setUp(self):
         self.patcher = patch('application_only_auth.client.urlopen',
-                             new=MagicMock(side_effect=fake_urlopen))
+                             fake_urlopen)
         self.patcher.start()
         self.client = Client('xxxxxx', 'xxxxxx')
 
