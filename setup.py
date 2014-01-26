@@ -5,7 +5,7 @@ with open('README.md') as file:
     long_description = file.read()
 
 
-setup(name='twiiter-application-only-auth',
+setup(name='twitter-application-only-auth',
       version='0.3.0',
       author='Pablo SEMINARIO',
       author_email='pablo@seminar.io',
