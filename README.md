@@ -12,6 +12,13 @@ Tested with Python 2.6, 2.7, 3.2 and 3.3
 [![Coverage Status](https://coveralls.io/repos/pabluk/twitter-application-only-auth/badge.png)](https://coveralls.io/r/pabluk/twitter-application-only-auth)
 
 
+Install
+-------
+
+```
+pip install https://github.com/pabluk/twitter-application-only-auth/archive/master.zip
+```
+
 Usage
 -----
 
