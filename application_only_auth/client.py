@@ -63,7 +63,7 @@ class Client(object):
                            'application/x-www-form-urlencoded;charset=UTF-8')
         request.add_header('Authorization',
                            'Basic %s' % encoded_bearer_token.decode('utf-8'))
-        request.add_data('grant_type=client_credentials'.encode('ascii'))
+        request.data = 'grant_type=client_credentials'.encode('ascii')
 
         response = urlopen(request)
         raw_data = response.read().decode('utf-8')
