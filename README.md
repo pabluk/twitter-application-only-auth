@@ -47,3 +47,10 @@ Real-World use cases
 
 * [Tweet Dump](http://tweetdump.info/): dump and inspect your tweet data!
 
+
+Authors and contributors
+------------------------
+
+* [Pablo Seminario](https://github.com/pabluk)
+* [Chris Hawkins](https://github.com/ChrisHawkins) for Python 3.4 support
+
