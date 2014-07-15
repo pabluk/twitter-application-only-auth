@@ -52,5 +52,6 @@ Authors and contributors
 ------------------------
 
 * [Pablo Seminario](https://github.com/pabluk)
+* [Rafael Reimberg](https://github.com/rreimberg) for the initial setup.py
 * [Chris Hawkins](https://github.com/ChrisHawkins) for Python 3.4 support
 
