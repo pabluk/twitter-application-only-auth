@@ -6,7 +6,7 @@ with open('README.md') as file:
 
 
 setup(name='twitter-application-only-auth',
-      version='0.3.2',
+      version='0.3.3',
       author='Pablo SEMINARIO',
       author_email='pablo@seminar.io',
       url='https://github.com/pabluk/twitter-application-only-auth',
@@ -15,7 +15,7 @@ setup(name='twitter-application-only-auth',
       long_description=long_description,
       license='GNU General Public License v3 (GPLv3)',
       packages=['application_only_auth'],
-      provides=['application_only_auth (0.3.2)'],
+      provides=['application_only_auth (0.3.3)'],
       classifiers=['Development Status :: 4 - Beta',
                    'Intended Audience :: Developers',
                    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
