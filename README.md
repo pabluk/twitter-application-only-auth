@@ -6,7 +6,7 @@ https://dev.twitter.com/docs/auth/application-only-auth
 that offers applications the ability to issue authenticated requests on behalf
 of the application itself (as opposed to on behalf of a specific user).
 
-Tested with Python 2.6, 2.7, 3.2, 3.3 and 3.4
+Tested with Python 2.6, 2.7, 3.3 and 3.4
 
 [![Build Status](https://travis-ci.org/pabluk/twitter-application-only-auth.png)](https://travis-ci.org/pabluk/twitter-application-only-auth)
 [![Coverage Status](https://coveralls.io/repos/pabluk/twitter-application-only-auth/badge.png)](https://coveralls.io/r/pabluk/twitter-application-only-auth)
