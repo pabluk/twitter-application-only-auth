@@ -16,7 +16,7 @@ Install
 -------
 
 ```
-pip install https://github.com/pabluk/twitter-application-only-auth/archive/master.zip
+pip install twitter-application-only-auth
 ```
 
 Usage
