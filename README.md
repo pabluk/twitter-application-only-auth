@@ -8,8 +8,8 @@ of the application itself (as opposed to on behalf of a specific user).
 
 Tested with Python 2.7, 3.5, 3.6 and 3.7
 
-[![Build Status](https://github.com/pabluk/twitter-application-only-auth/workflows/.github/workflows/tests.yml/badge.svg)](https://github.com/pabluk/twitter-application-only-auth/actions)
-[![Coverage Status](https://coveralls.io/repos/pabluk/twitter-application-only-auth/badge.png)](https://coveralls.io/r/pabluk/twitter-application-only-auth)
+[![Build Status](https://github.com/pabluk/twitter-application-only-auth/workflows/Tests%20and%20coverage/badge.svg)](https://github.com/pabluk/twitter-application-only-auth/actions)
+[![Coverage Status](https://coveralls.io/repos/github/pabluk/twitter-application-only-auth/badge.svg?branch=master)](https://coveralls.io/github/pabluk/twitter-application-only-auth?branch=master)
 
 
 Install
