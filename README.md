@@ -8,7 +8,6 @@ of the application itself (as opposed to on behalf of a specific user).
 
 Tested with Python 2.6, 2.7, 3.3 and 3.4
 
-[![Build Status](https://travis-ci.org/pabluk/twitter-application-only-auth.png)](https://travis-ci.org/pabluk/twitter-application-only-auth)
 [![Coverage Status](https://coveralls.io/repos/pabluk/twitter-application-only-auth/badge.png)](https://coveralls.io/r/pabluk/twitter-application-only-auth)
 
 
