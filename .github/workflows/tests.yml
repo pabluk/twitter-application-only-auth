@@ -1,4 +1,4 @@
-name: Python package
+name: Tests and coverage
 
 on: [push]
 
@@ -17,13 +17,15 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Install test dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install coveralls nose
+        pip install -r requirements-test.txt
     - name: Test with Nose
       run: |
         nosetests --with-coverage --cover-package=application_only_auth
-    - name: Run coveralls
+    - name: Coveralls
       run: |
         coveralls
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
