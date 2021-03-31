@@ -45,7 +45,7 @@ print(status['resources']['search'])
 Real-World use cases
 --------------------
 
-* [Tweet Dump](http://tweetdump.info/): dump and inspect your tweet data!
+* [Tweet Dump](https://tweetdump.debugstack.com/): dump and inspect your tweet data!
 
 
 Authors and contributors
