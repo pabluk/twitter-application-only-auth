@@ -7,7 +7,7 @@ with open('README.md') as file:
 
 setup(name='twitter-application-only-auth',
       version='0.3.3',
-      author='Pablo SEMINARIO',
+      author='Pablo Seminario',
       author_email='pablo@seminar.io',
       url='https://github.com/pabluk/twitter-application-only-auth',
       description='A simple implementation of '
