@@ -1,33 +1,36 @@
 from distutils.core import setup
 
 
-with open('README.md') as file:
+with open("README.md") as file:
     long_description = file.read()
 
 
-setup(name='twitter-application-only-auth',
-      version='0.3.3',
-      author='Pablo Seminario',
-      author_email='pablo@seminar.io',
-      url='https://github.com/pabluk/twitter-application-only-auth',
-      description='A simple implementation of '
-      'the Twitter Application-only authentication',
-      long_description=long_description,
-      license='GNU General Public License v3 (GPLv3)',
-      packages=['application_only_auth'],
-      provides=['application_only_auth (0.3.3)'],
-      classifiers=['Development Status :: 4 - Beta',
-                   'Intended Audience :: Developers',
-                   'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-                   'Operating System :: OS Independent',
-                   'Programming Language :: Python',
-                   'Programming Language :: Python :: 2',
-                   'Programming Language :: Python :: 2.7',
-                   'Programming Language :: Python :: 3',
-                   'Programming Language :: Python :: 3.6',
-                   'Programming Language :: Python :: 3.7',
-                   'Programming Language :: Python :: 3.8',
-                   'Programming Language :: Python :: 3.9',
-                   'Programming Language :: Python :: 3.10',
-                   'Programming Language :: Python :: 3.11',
-                   'Topic :: Software Development :: Libraries'])
+setup(
+    name="twitter-application-only-auth",
+    version="0.3.3",
+    author="Pablo Seminario",
+    author_email="pablo@seminar.io",
+    url="https://github.com/pabluk/twitter-application-only-auth",
+    description="A simple implementation of " "the Twitter Application-only authentication",
+    long_description=long_description,
+    license="GNU General Public License v3 (GPLv3)",
+    packages=["application_only_auth"],
+    provides=["application_only_auth (0.3.3)"],
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Topic :: Software Development :: Libraries",
+    ],
+)
