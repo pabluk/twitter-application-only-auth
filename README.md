@@ -48,6 +48,26 @@ Real-World use cases
 * [Tweet Dump](https://tweetdump.debugstack.com/): dump and inspect your tweet data!
 
 
+Development
+-----------
+
+To contribute to this project or to test this library locally you'll need to install these dependencies:
+
+```bash
+python3 -m venv venv # for example on a virtual environment
+source venv/bin/activate
+pip install -r requirements-test.txt
+pip install black
+```
+
+and you can validate your changes running:
+
+```bash
+python -m pytest --verbose
+black . --line-length=120 --check --diff
+```
+
+
 Authors and contributors
 ------------------------
 
